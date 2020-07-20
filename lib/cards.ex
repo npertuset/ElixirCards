@@ -3,7 +3,6 @@ defmodule Cards do
     Provides methods for creating and handling a deck of cards
   """
 
-  @spec create_deck :: [<<_::24, _::_*16>>, ...]
   @doc """
     Returns a list of strings representing a deck of playing cards
   """
@@ -16,7 +15,6 @@ defmodule Cards do
     end
   end
 
-  @spec shuffle(any) :: [any]
   def shuffle(deck) do
     Enum.shuffle(deck)
   end
@@ -30,7 +28,6 @@ defmodule Cards do
       iex> Cards.contains?(deck, "Ace of Spades")
       true
   """
-  @spec contains?(any, any) :: boolean
   def contains?(deck, card) do
     Enum.member?(deck, card)
   end
@@ -63,7 +60,6 @@ defmodule Cards do
     end
   end
 
-  @spec create_hand(integer) :: {[any], [any]}
   def create_hand(hand_size) do
      Cards.create_deck
      |> Cards.shuffle
